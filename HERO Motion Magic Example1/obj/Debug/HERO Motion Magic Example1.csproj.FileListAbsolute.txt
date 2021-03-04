@@ -17,3 +17,22 @@ C:\Users\24jasonz\source\repos\HERO Motion Magic Example1\HERO Motion Magic Exam
 C:\Users\24jasonz\source\repos\HERO Motion Magic Example1\HERO Motion Magic Example1\obj\Debug\be\HERO Motion Magic Example.pdbx
 C:\Users\24jasonz\source\repos\HERO Motion Magic Example1\HERO Motion Magic Example1\obj\Debug\le\HERO Motion Magic Example.pe
 C:\Users\24jasonz\source\repos\HERO Motion Magic Example1\HERO Motion Magic Example1\obj\Debug\le\HERO Motion Magic Example.pdbx
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\bin\Debug\le\HERO Motion Magic Example.exe
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\bin\Debug\be\HERO Motion Magic Example.exe
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\bin\Debug\le\HERO Motion Magic Example.pdb
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\bin\Debug\be\HERO Motion Magic Example.pdb
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\bin\Debug\HERO Motion Magic Example.exe
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\bin\Debug\HERO Motion Magic Example.pdb
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\bin\Debug\le\HERO Motion Magic Example.pe
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\bin\Debug\le\HERO Motion Magic Example.pdbx
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\bin\Debug\be\HERO Motion Magic Example.pe
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\bin\Debug\be\HERO Motion Magic Example.pdbx
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\obj\Debug\HERO Motion Magic Example1.csprojAssemblyReference.cache
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\obj\Debug\TinyCLR_DebugReferences.cache
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\obj\Debug\HERO Motion Magic Example1.csproj.CoreCompileInputs.cache
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\obj\Debug\be\HERO Motion Magic Example.pe
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\obj\Debug\be\HERO Motion Magic Example.pdbx
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\obj\Debug\le\HERO Motion Magic Example.pe
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\obj\Debug\le\HERO Motion Magic Example.pdbx
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\obj\Debug\HERO Motion Magic Example.exe
+C:\Users\24jasonz\Desktop\Grade-9\Robotic-Engineering\Motion-Magic\HERO Motion Magic Example1\obj\Debug\HERO Motion Magic Example.pdb

@@ -32,11 +32,11 @@ namespace HERO_Motion_Magic_Example
     public class Program
     {
         /** talon to control */
-        private TalonSRX leftFront = new TalonSRX(1);
-        private TalonSRX leftBack = new TalonSRX(3); //swap
-        private TalonSRX rightFront = new TalonSRX(0);
-        private TalonSRX rightBack = new TalonSRX(2);
-        private TalonSRX intake = new TalonSRX(12); //swap
+        private TalonSRX rightLeader = new TalonSRX(0);
+        private TalonSRX leftLeader= new TalonSRX(1);
+        private TalonSRX rightFollower = new TalonSRX(2);
+        private TalonSRX leftFollower = new TalonSRX(3); 
+        private TalonSRX intake = new TalonSRX(12); 
         /** desired mode to put talon in */
         private ControlMode _mode = ControlMode.PercentOutput;
         /** attached gamepad to HERO, tested with Logitech F710 */
@@ -54,66 +54,63 @@ namespace HERO_Motion_Magic_Example
         public void SetupConfig()
         {
             /* specify sensor characteristics */
-            leftFront.ConfigSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0);
-            leftFront.SetSensorPhase(false);
-            rightFront.ConfigSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0);
-            rightFront.SetSensorPhase(false);// make sure positive motor output means sensor moves in position direction */
+            leftLeader.ConfigSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0);
+            leftLeader.SetSensorPhase(false);
+            rightLeader.ConfigSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0);
+            rightLeader.SetSensorPhase(false); // make sure positive motor output means sensor moves in position direction */
             // call ConfigEncoderCodesPerRev or ConfigPotentiometerTurns for Quadrature or Analog sensor types.
-            leftBack.ConfigFactoryDefault();
-            rightBack.ConfigFactoryDefault();
             
-
             /* brake or coast during neutral */
-            leftFront.SetNeutralMode(NeutralMode.Brake);
-            rightFront.SetNeutralMode(NeutralMode.Brake);
+            leftLeader.SetNeutralMode(NeutralMode.Brake);
+            rightLeader.SetNeutralMode(NeutralMode.Brake);
 
             intake.SetNeutralMode(NeutralMode.Brake);
 
             /* closed-loop and motion-magic parameters */
-            leftFront.Config_kF(kSlotIdx, 0.0276f, kTimeoutMs); // 8874 native sensor units per 100ms at full motor output (+1023)
-            leftFront.Config_kP(kSlotIdx, 0.55f, kTimeoutMs);
-            leftFront.Config_kI(kSlotIdx, 0.0f, kTimeoutMs);
-            leftFront.Config_kD(kSlotIdx, 20f, kTimeoutMs);
-            leftFront.Config_IntegralZone(kSlotIdx, 30, kTimeoutMs);
-            leftFront.SelectProfileSlot(kSlotIdx, 0); /* select this slot */
-            leftFront.ConfigNominalOutputForward(0f, kTimeoutMs);
-            leftFront.ConfigNominalOutputReverse(0f, kTimeoutMs);
-            leftFront.ConfigPeakOutputForward(1.0f, kTimeoutMs);
-            leftFront.ConfigPeakOutputReverse(-1.0f, kTimeoutMs);
-            leftFront.ConfigMotionCruiseVelocity(8000, kTimeoutMs); // 8000 native units
-            leftFront.ConfigMotionAcceleration(16000, kTimeoutMs); // 16000 native units per sec, (0.5s to reach cruise velocity).
+            leftLeader.Config_kF(kSlotIdx, 0.1451f, kTimeoutMs); // 8874 native sensor units per 100ms at full motor output (+1023)
+            leftLeader.Config_kP(kSlotIdx, 0.425f, kTimeoutMs);
+            leftLeader.Config_kI(kSlotIdx, 0.00085f, kTimeoutMs);
+            leftLeader.Config_kD(kSlotIdx, 0.8f, kTimeoutMs);
+            leftLeader.Config_IntegralZone(kSlotIdx, 50, kTimeoutMs);
+            leftLeader.SelectProfileSlot(kSlotIdx, 0); /* select this slot */
+            leftLeader.ConfigNominalOutputForward(0f, kTimeoutMs);
+            leftLeader.ConfigNominalOutputReverse(0f, kTimeoutMs);
+            leftLeader.ConfigPeakOutputForward(1.0f, kTimeoutMs);
+            leftLeader.ConfigPeakOutputReverse(-1.0f, kTimeoutMs);
+            leftLeader.ConfigMotionCruiseVelocity(8000, kTimeoutMs); // 8000 native units
+            leftLeader.ConfigMotionAcceleration(16000, kTimeoutMs); // 16000 native units per sec, (0.5s to reach cruise velocity).
 
             
-            rightFront.Config_kF(kSlotIdx, 0.0276f, kTimeoutMs); // 8874 native sensor units per 100ms at full motor output (+1023)
-            rightFront.Config_kP(kSlotIdx, 0.55f, kTimeoutMs);
-            rightFront.Config_kI(kSlotIdx, 0.0f, kTimeoutMs);
-            rightFront.Config_kD(kSlotIdx, 20f, kTimeoutMs);
-            rightFront.Config_IntegralZone(kSlotIdx, 30, kTimeoutMs);
-            rightFront.SelectProfileSlot(kSlotIdx, 0); /* select this slot */
-            rightFront.ConfigNominalOutputForward(0f, kTimeoutMs);
-            rightFront.ConfigNominalOutputReverse(0f, kTimeoutMs);
-            rightFront.ConfigPeakOutputForward(1.0f, kTimeoutMs);
-            rightFront.ConfigPeakOutputReverse(-1.0f, kTimeoutMs);
-            rightFront.ConfigMotionCruiseVelocity(8000, kTimeoutMs); // 8000 native units
-            rightFront.ConfigMotionAcceleration(16000, kTimeoutMs); // 16000 native units per sec, (0.5s to reach cruise velocity).
+            rightLeader.Config_kF(kSlotIdx, 0.1451f, kTimeoutMs); // 8874 native sensor units per 100ms at full motor output (+1023)
+            rightLeader.Config_kP(kSlotIdx, 0.425f, kTimeoutMs);
+            rightLeader.Config_kI(kSlotIdx, 0.00085f, kTimeoutMs);
+            rightLeader.Config_kD(kSlotIdx, 0.8f, kTimeoutMs);
+            rightLeader.Config_IntegralZone(kSlotIdx, 50, kTimeoutMs);
+            rightLeader.SelectProfileSlot(kSlotIdx, 0); /* select this slot */
+            rightLeader.ConfigNominalOutputForward(0f, kTimeoutMs);
+            rightLeader.ConfigNominalOutputReverse(0f, kTimeoutMs);
+            rightLeader.ConfigPeakOutputForward(1.0f, kTimeoutMs);
+            rightLeader.ConfigPeakOutputReverse(-1.0f, kTimeoutMs);
+            rightLeader.ConfigMotionCruiseVelocity(8000, kTimeoutMs); // 8000 native units
+            rightLeader.ConfigMotionAcceleration(16000, kTimeoutMs); // 16000 native units per sec, (0.5s to reach cruise velocity).
 
-            
+
             /* Home the relative sensor, 
                 alternatively you can throttle until limit switch,
                 use an absolute signal like CtreMagEncoder_Absolute or analog sensor.
                 */
-            leftFront.SetSelectedSensorPosition(0);
-            rightFront.SetSelectedSensorPosition(0);
+            leftLeader.SetInverted(false);
+            rightLeader.SetInverted(true);
+            leftFollower.SetInverted(false); 
+            rightFollower.SetInverted(true);
 
-            //Reverse the right encoder
-            rightFront.SetSensorPhase(true);
-            leftFront.SetSensorPhase(false);
+            leftLeader.SetSelectedSensorPosition(0);
+            rightLeader.SetSelectedSensorPosition(0);
 
-            leftBack.Follow(leftFront);
-            rightBack.Follow(rightFront);
+            leftFollower.Follow(leftLeader);
+            rightFollower.Follow(rightLeader);
         }
         /** spin in this routine forever */
-        public bool reset = false;
 
         public void RunForever()
         {
@@ -125,10 +122,12 @@ namespace HERO_Motion_Magic_Example
                 float leftY = -1f * _gamepad.GetAxis(1);
                 float rightX = -1f * _gamepad.GetAxis(2);
                 float rightY = -1f * _gamepad.GetAxis(5); //check if correct axis
+                //Joystick buttons
                 bool btnTopLeftShoulder = _gamepad.GetButton(5);
                 bool btnBtmLeftShoulder = _gamepad.GetButton(7);
                 bool buttonTop= _gamepad.GetButton(6);
                 bool buttonBottom = _gamepad.GetButton(8);
+                //Deadband
                 Deadband(ref leftY);
                 Deadband(ref rightX);
 
@@ -147,8 +146,8 @@ namespace HERO_Motion_Magic_Example
                 if (_mode == ControlMode.PercentOutput)
                 {
                     //Tank Drive
-                    leftFront.Set(_mode, (float)System.Math.Pow(leftY, 3) - (float)System.Math.Pow(rightX, 3));
-                    rightFront.Set(_mode, -(float)System.Math.Pow(leftY, 3) - (float)System.Math.Pow(rightX, 3)); //need to be reversed
+                    leftLeader.Set(_mode, (float)System.Math.Pow(leftY, 3) - (float)System.Math.Pow(rightX, 3));
+                    rightLeader.Set(_mode, (float)System.Math.Pow(leftY, 3) + (float)System.Math.Pow(rightX, 3)); 
 
                     //Intake
                     if (buttonTop) {
@@ -158,7 +157,6 @@ namespace HERO_Motion_Magic_Example
                     } else {
                         intake.Set(_mode, 0);
                     }
-                    Debug.Print("Left Encoder: " + leftFront.GetSelectedSensorPosition() + "   Right Encoder: " + rightFront.GetSelectedSensorPosition());
                 }
 
                 else if (_mode == ControlMode.MotionMagic)
@@ -168,16 +166,16 @@ namespace HERO_Motion_Magic_Example
                     float servoToRotation_rightX = rightX * 40960;
 
                     //Tank Drive
-                    leftFront.Set(_mode, servoToRotation_leftY - servoToRotation_rightX);
-                    rightFront.Set(_mode, -servoToRotation_leftY - servoToRotation_rightX);
+                    leftLeader.Set(_mode, servoToRotation_leftY - servoToRotation_rightX);
+                    rightLeader.Set(_mode, servoToRotation_leftY + servoToRotation_rightX);
                 }
                 /* instrumentation */
-                Instrument.Process(leftFront);
-                Instrument.Process(leftBack);
-                Instrument.Process(rightFront);
-                Instrument.Process(rightBack);
+                Instrument.Process(leftLeader);
+                //Instrument.Process(rightLeader);
 
-                Instrument.Process(intake);
+                //Instrument.Process(intake);
+
+                //Debug.Print("Left Encoder: " + leftLeader.GetSelectedSensorPosition() + "   Right Encoder: " + rightLeader.GetSelectedSensorPosition());
 
                 /* wait a bit */
                 System.Threading.Thread.Sleep(5);
