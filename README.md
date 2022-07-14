@@ -22,7 +22,7 @@ In this project, I experimented with CTRE's [motion magic](https://docs.ctre-pho
 
 Motion Magic generates motion profiles with smooth acceleration/deceleration for clean movement. You can customize cruise velocity, max acceleration, and max jerk for maximum accuracy. 
 
-[image]
+![Example trapezoidal motion profile](https://docs.ctre-phoenix.com/en/stable/_images/closedlp-1.png)
 
 ## Usage
 
